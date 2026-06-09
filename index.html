@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+<html lang="pt-BR" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fernando Bira | Dev Frontend</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+        .cursor::after {
+            content: '|';
+            animation: blink 1s infinite;
+        }
+        @keyframes blink {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0; }
+        }
+      
+        section {
+            scroll-margin-top: 80px;
+        }
+    </style>
+</head>
+<body class="bg-slate-950 text-slate-100 font-sans antialiased selection:bg-purple-500 selection:text-white">
+
+    <!-- HEADER -->
+    <header class="fixed top-0 left-0 w-full bg-slate-950/80 backdrop-blur-md z-50 border-b border-slate-900">
+        <div class="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
+            <a href="#home" class="text-xl font-bold tracking-wider bg-gradient-to-r from-purple-400 to-cyan-400 bg-clip-text text-transparent">&lt;Fernando-Bira/&gt;</a>
+            
+           <nav class="hidden md:flex space-x-8 text-sm font-medium tracking-wide">
+              <a href="#home" class="hover:text-purple-400 transition-colors">Início</a>
+              <a href="#sobre" class="hover:text-purple-400 transition-colors">Sobre</a>
+              <a href="#servicos" class="hover:text-purple-400 transition-colors">Serviços</a>
+              <a href="#habilidades" class="hover:text-purple-400 transition-colors">Habilidades</a>
+              <a href="#projectos" class="hover:text-purple-400 transition-colors">Projectos</a>
+              <a href="#contato" class="hover:text-purple-400 transition-colors">Contato</a>
+           </nav>
+
+            <button class="md:hidden text-2xl text-slate-400 hover:text-purple-400" id="menu-btn">
+                <i class="fa-solid fa-bars"></i>
+            </button>
+        </div>
+    </header>
+
+    <!-- HERO SECTION -->
+    <section id="home" class="min-h-screen pt-20 flex items-center justify-center relative overflow-hidden px-6 bg-slate-950">
+        <div class="max-w-7xl w-full grid grid-cols-1 lg:grid-cols-12 gap-12 items-center relative z-10">
+            
+            <div class="lg:col-span-6 space-y-6 z-20">
+                <p class="text-purple-400 font-mono tracking-widest text-sm uppercase font-semibold">Olá, o meu nome é</p>
+                <h1 class="text-5xl md:text-6xl font-extrabold text-white tracking-tight">Fernando Bira</h1>
+                <h2 class="text-2xl md:text-3xl font-bold bg-gradient-to-r from-purple-400 via-pink-400 to-cyan-400 bg-clip-text text-transparent">Desenvolvedor Web Frontend</h2>
+                <p class="text-slate-400 max-w-lg leading-relaxed">
+                    Especializado em construir experiências digitais modernas, fluidas e focadas na melhor usabilidade.
+                </p>
+                <div class="flex flex-wrap gap-4 pt-4">
+                    <a href="#projectos" class="bg-gradient-to-r from-purple-600 to-cyan-500 hover:from-purple-500 hover:to-cyan-400 text-white font-bold px-6 py-3.5 rounded-lg shadow-lg shadow-purple-500/20 transition-all transform hover:-translate-y-0.5 text-center">
+                        Ver Projectos
+                    </a>
+                    <a href="CVFernandoBira.pdf" download class="border border-purple-500 text-purple-400 hover:bg-purple-500/10 font-semibold px-6 py-3.5 rounded-lg transition-all transform hover:-translate-y-0.5 flex items-center justify-center gap-2 text-center">
+                        <i class="fa-solid fa-download"></i> Baixar Currículo
+                    </a>
+                </div>
+            </div>
+
+            <div class="lg:col-span-6 flex justify-center relative w-full max-w-lg lg:max-w-none mx-auto">
+                <svg viewBox="0 0 500 350" class="w-full h-auto drop-shadow-2xl">
+                    <rect x="40" y="20" width="420" height="260" rx="12" fill="#090d16" stroke="#1e1b4b" stroke-width="4"/>
+                    <rect x="50" y="30" width="400" height="240" rx="4" fill="#030712"/>
+                    <path d="M220 280 L280 280 L290 320 L210 320 Z" fill="#1e1b4b"/>
+                    <rect x="180" y="320" width="140" height="10" rx="4" fill="#0f172a"/>
+                    
+                    <rect x="50" y="30" width="400" height="25" rx="4" fill="#111827"/>
+                    <circle cx="65" cy="42" r="4" fill="#ff5f56"/>
+                    <circle cx="77" cy="42" r="4" fill="#ffbd2e"/>
+                    <circle cx="89" cy="42" r="4" fill="#27c93f"/>
+                    <text x="210" y="47" fill="#6b7280" font-family="monospace" font-size="10">index.js - Portfolio</text>
+
+                    <rect x="50" y="55" width="30" height="215" fill="#0b0f19"/>
+                    <circle cx="65" cy="75" r="5" fill="#a855f7" opacity="0.4"/>
+                    <circle cx="65" cy="95" r="5" fill="#06b6d4" opacity="0.4"/>
+                    <circle cx="65" cy="115" r="5" fill="#a855f7" opacity="0.4"/>
+
+                    <g font-family="monospace" font-size="11" font-weight="bold">
+                        <text x="90" y="85" fill="#374151">1</text>
+                        <text x="90" y="105" fill="#374151">2</text>
+                        <text x="90" y="125" fill="#374151">3</text>
+                        <text x="90" y="145" fill="#374151">4</text>
+                        <text x="90" y="165" fill="#374151">5</text>
+                        
+                        <text id="code-line-1" x="115" y="85" fill="#a855f7"></text>
+                        <text id="code-line-2" x="135" y="105" fill="#06b6d4"></text>
+                        <text id="code-line-3" x="155" y="125" fill="#e879f9"></text>
+                        <text id="code-line-4" x="135" y="145" fill="#22d3ee"></text>
+                        <text id="code-line-5" x="115" y="165" fill="#a855f7"></text>
+                    </g>
+                </svg>
+            </div>
+        </div>
+        
+        <!-- Luzes de fundo melhoradas -->
+        <div class="absolute -top-40 -right-40 w-96 h-96 bg-purple-500/20 rounded-full blur-3xl"></div>
+        <div class="absolute -bottom-40 -left-40 w-96 h-96 bg-cyan-500/20 rounded-full blur-3xl"></div>
+    </section>
+
+    <!-- SOBRE MIM -->
+    <section id="sobre" class="py-24 bg-slate-900/40 px-6">
+        <div class="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+            
+            <div class="lg:col-span-7 space-y-6 order-2 lg:order-1">
+                <div class="flex items-center space-x-4">
+                    <h2 class="text-3xl font-bold text-white">Sobre Mim</h2>
+                    <div class="h-[1px] bg-gradient-to-r from-purple-500 to-transparent flex-1 max-w-[200px]"></div>
+                </div>
+                <div class="space-y-4 text-slate-400 leading-relaxed">
+                    <p>
+                        Sou Técnico de Informática e desenvolvedor front-end focado em criar soluções eficientes e com interfaces altamente refinadas. Minha trajetória na Ciência da Computação moldou minha base lógica e a paixão por arquitetar códigos limpos.
+                    </p>
+                    <p>
+                        Adoro o desafio de transformar ideias complexas em aplicações web responsivas e intuitivas. Tenho foco contínuo em performance, semântica e na experiência do usuário final, seja criando ferramentas utilitárias ou sistemas robustos de gestão.
+                    </p>
+                </div>
+            </div>
+
+            <div class="lg:col-span-5 flex justify-center order-1 lg:order-2">
+                <div class="relative group max-w-[320px] w-full aspect-square">
+                    <!-- Borda brilhante em gradiente -->
+                    <div class="absolute inset-0 bg-gradient-to-tr from-purple-600 to-cyan-400 rounded-2xl translate-x-4 translate-y-4 group-hover:translate-x-2 group-hover:translate-y-2 transition-transform duration-300 opacity-80 shadow-lg shadow-purple-500/10"></div>
+                    <div class="absolute inset-0 bg-slate-800 rounded-2xl overflow-hidden shadow-2xl border border-slate-700">
+                        <img src="img/213986423.png" alt="Fernando Bira" class="w-full h-full object-cover filter grayscale contrast-125 mix-blend-luminosity group-hover:mix-blend-normal group-hover:filter-none transition-all duration-300">
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- SEÇÃO DE SERVIÇOS -->
+    <section id="servicos" class="py-24 bg-slate-950 px-6 relative overflow-hidden">
+        <div class="max-w-7xl mx-auto space-y-14 relative z-10">
+            
+            <div class="flex items-center space-x-4">
+                <div class="space-y-1">
+                    <p class="text-purple-400 font-mono text-xs tracking-widest uppercase font-semibold">Soluções e Especialidades</p>
+                    <h2 class="text-3xl font-bold text-white tracking-tight">O Que Eu Faço</h2>
+                </div>
+                <div class="h-[1px] bg-gradient-to-r from-cyan-500 to-transparent flex-1 max-w-[200px] mt-6"></div>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                
+                <!-- Serviço 1: Desenvolvimento Web -->
+                <div class="bg-slate-900/40 backdrop-blur-sm p-8 rounded-2xl border border-slate-800/80 flex flex-col justify-between hover:border-purple-500/50 hover:-translate-y-2 transition-all duration-300 group relative overflow-hidden">
+                    <div class="absolute bottom-0 left-0 h-[3px] w-0 bg-gradient-to-r from-purple-500 to-cyan-500 group-hover:w-full transition-all duration-300"></div>
+                    
+                    <div class="space-y-5">
+                        <div class="w-12 h-12 bg-cyan-500/10 rounded-lg flex items-center justify-center text-cyan-400 text-xl group-hover:bg-cyan-500 group-hover:text-slate-950 transition-colors duration-300">
+                           <i class="fa-solid fa-code"></i>
+                         </div>
+                        <h3 class="text-xl font-bold text-white tracking-wide group-hover:text-purple-400 transition-colors">Desenvolvimento Web</h3>
+                        <p class="text-slate-400 text-sm leading-relaxed">
+                            Transformação de designs estáticos em aplicações web dinâmicas. Foco absoluto na arquitetura de código limpo, semântica correta, acessibilidade e otimização de performance para motores de busca (SEO).
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Serviço 2: Design Responsivo -->
+                <div class="bg-slate-900/40 backdrop-blur-sm p-8 rounded-2xl border border-slate-800/80 flex flex-col justify-between hover:border-cyan-500/50 hover:-translate-y-2 transition-all duration-300 group relative overflow-hidden">
+                    <div class="absolute bottom-0 left-0 h-[3px] w-0 bg-gradient-to-r from-cyan-500 to-purple-500 group-hover:w-full transition-all duration-300"></div>
+                    
+                    <div class="space-y-5">
+                        <div class="w-12 h-12 bg-cyan-500/10 rounded-lg flex items-center justify-center text-cyan-400 text-xl group-hover:bg-cyan-500 group-hover:text-slate-950 transition-colors duration-300">
+                           <i class="fa-solid fa-mobile-screen-button"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-white tracking-wide group-hover:text-cyan-400 transition-colors">Interfaces Responsivas</h3>
+                        <p class="text-slate-400 text-sm leading-relaxed">
+                            Desenvolvimento focado na filosofia <span class="text-slate-300 font-medium">Mobile-First</span>. Interfaces fluídas e layouts inteligentes construídos com Tailwind CSS que se moldam perfeitamente a qualquer dispositivo.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Serviço 3: Aplicações SPA -->
+                <div class="bg-slate-900/40 backdrop-blur-sm p-8 rounded-2xl border border-slate-800/80 flex flex-col justify-between hover:border-purple-500/50 hover:-translate-y-2 transition-all duration-300 group relative overflow-hidden">
+                    <div class="absolute bottom-0 left-0 h-[3px] w-0 bg-gradient-to-r from-purple-500 to-cyan-500 group-hover:w-full transition-all duration-300"></div>
+                    
+                    <div class="space-y-5">
+                       <div class="w-12 h-12 bg-cyan-500/10 rounded-lg flex items-center justify-center text-cyan-400 text-xl group-hover:bg-cyan-500 group-hover:text-slate-950 transition-colors duration-300">
+                         <i class="fa-solid fa-laptop-code"></i>
+                       </div>
+                        <h3 class="text-xl font-bold text-white tracking-wide group-hover:text-purple-400 transition-colors">Aplicações SPA</h3>
+                        <p class="text-slate-400 text-sm leading-relaxed">
+                            Aplicações de página única (Single Page Applications) de alta interatividade. Soluções robustas criadas em React, focadas em renderização ultra-rápida, consumo eficiente de APIs e reatividade contínua.
+                        </p>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- HABILIDADES -->
+    <section id="habilidades" class="py-24 bg-slate-900/20 px-6">
+        <div class="max-w-7xl mx-auto space-y-12">
+            <div class="flex items-center space-x-4">
+                <h2 class="text-3xl font-bold text-white">Minhas Habilidades</h2>
+                <div class="h-[1px] bg-gradient-to-r from-purple-500 to-transparent flex-1 max-w-[200px]"></div>
+            </div>
+
+            <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-6">
+                <div class="bg-slate-900/60 p-6 rounded-xl border border-slate-800 flex flex-col items-center justify-center text-center space-y-3 hover:border-orange-500/50 hover:bg-orange-500/5 transition-all group">
+                    <i class="fa-brands fa-html5 text-4xl text-orange-500 group-hover:scale-110 transition-transform"></i>
+                    <span class="font-medium text-sm">HTML5</span>
+                </div>
+                <div class="bg-slate-900/60 p-6 rounded-xl border border-slate-800 flex flex-col items-center justify-center text-center space-y-3 hover:border-blue-500/50 hover:bg-blue-500/5 transition-all group">
+                    <i class="fa-brands fa-css3-alt text-4xl text-blue-500 group-hover:scale-110 transition-transform"></i>
+                    <span class="font-medium text-sm">CSS3</span>
+                </div>
+                <div class="bg-slate-900/60 p-6 rounded-xl border border-slate-800 flex flex-col items-center justify-center text-center space-y-3 hover:border-yellow-500/50 hover:bg-yellow-500/5 transition-all group">
+                    <i class="fa-brands fa-js text-4xl text-yellow-400 group-hover:scale-110 transition-transform"></i>
+                    <span class="font-medium text-sm">JavaScript</span>
+                </div>
+                <div class="bg-slate-900/60 p-6 rounded-xl border border-slate-800 flex flex-col items-center justify-center text-center space-y-3 hover:border-cyan-400/50 hover:bg-cyan-400/5 transition-all group">
+                    <i class="fa-brands fa-react text-4xl text-cyan-400 group-hover:scale-110 transition-transform"></i>
+                    <span class="font-medium text-sm">React.js</span>
+                </div>
+                <div class="bg-slate-900/60 p-6 rounded-xl border border-slate-800 flex flex-col items-center justify-center text-center space-y-3 hover:border-sky-400/50 hover:bg-sky-400/5 transition-all group">
+                    <i class="fa-solid fa-wind text-4xl text-sky-400 group-hover:scale-110 transition-transform"></i>
+                    <span class="font-medium text-sm">Tailwind CSS</span>
+                </div>
+                <div class="bg-slate-900/60 p-6 rounded-xl border border-slate-800 flex flex-col items-center justify-center text-center space-y-3 hover:border-purple-500/50 hover:bg-purple-500/5 transition-all group">
+                    <i class="fa-brands fa-github text-4xl text-purple-400 group-hover:scale-110 transition-transform"></i>
+                    <span class="font-medium text-sm">GitHub</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- PROJECTOS -->
+    <section id="projectos" class="py-24 bg-slate-900/40 px-6">
+        <div class="max-w-7xl mx-auto space-y-12">
+            <div class="flex items-center space-x-4">
+                <h2 class="text-3xl font-bold text-white">Projectos Recentes</h2>
+                <div class="h-[1px] bg-gradient-to-r from-cyan-500 to-transparent flex-1 max-w-[200px]"></div>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Projeto 1 -->
+                <div class="bg-slate-900 rounded-xl overflow-hidden border border-slate-800 flex flex-col h-full hover:border-purple-500/40 hover:-translate-y-2 transition-all duration-300 group">
+                   <div class="h-48 bg-slate-800 relative overflow-hidden">
+                       <img src="img/escala30.png" alt="Ecrã do Sistema de Gestão de Notas" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300">
+                   </div>
+                    <div class="p-6 flex flex-col flex-grow space-y-4">
+                        <h3 class="text-xl font-bold text-white group-hover:text-purple-400 transition-colors">Sistema de Gestão de Notas</h3>
+                        <p class="text-slate-400 text-sm leading-relaxed flex-grow">
+                            Aplicação interativa desenvolvida para facilitar o controlo, cálculo de médias e acompanhamento de rendimento académico de estudantes para o instituto onde fiz o ensino médio.
+                        </p>
+                        <div class="flex flex-wrap gap-2 pt-2">
+                            <span class="text-xs bg-purple-950/50 text-purple-300 border border-purple-800/60 px-3 py-1 rounded-full font-mono">React</span>
+                            <span class="text-xs bg-cyan-950/50 text-cyan-300 border border-cyan-800/60 px-3 py-1 rounded-full font-mono">Tailwind</span>
+                            <span class="text-xs bg-purple-950/50 text-purple-300 border border-purple-800/60 px-3 py-1 rounded-full font-mono">PHP</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Projeto 2 -->
+                <div class="bg-slate-900 rounded-xl overflow-hidden border border-slate-800 flex flex-col h-full hover:border-cyan-500/40 hover:-translate-y-2 transition-all duration-300 group">
+                   <div class="h-48 bg-slate-800 relative overflow-hidden">
+                       <img src="img/res.png" alt="Ecrã do Localizador de Caixas ATM" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300">
+                   </div>
+                    <div class="p-6 flex flex-col flex-grow space-y-4">
+                        <h3 class="text-xl font-bold text-white group-hover:text-cyan-400 transition-colors">Website para reserva de mesas</h3>
+                        <p class="text-slate-400 text-sm leading-relaxed flex-grow">
+                            Interface de alta fidelidade com menu interativo, cabeçalho inteligente e painel administrative para controle de reservas.
+                        </p>
+                        <div class="flex flex-wrap gap-2 pt-2">
+                            <span class="text-xs bg-purple-950/50 text-purple-300 border border-purple-800/60 px-3 py-1 rounded-full font-mono">HTML</span>
+                            <span class="text-xs bg-cyan-950/50 text-cyan-300 border border-cyan-800/60 px-3 py-1 rounded-full font-mono">CSS</span>
+                             <span class="text-xs bg-purple-950/50 text-purple-300 border border-purple-800/60 px-3 py-1 rounded-full font-mono">Javascript</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Projeto 3 -->
+                <div class="bg-slate-900 rounded-xl overflow-hidden border border-slate-800 flex flex-col h-full hover:border-purple-500/40 hover:-translate-y-2 transition-all duration-300 group">
+                    <div class="h-48 bg-slate-800 relative overflow-hidden">
+                      <img src="img/Captura de ecrã 2026-06-06 190841.png" alt="Ecrã do Website de Restaurante" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300">
+                    </div>
+                    <div class="p-6 flex flex-col flex-grow space-y-4">
+                        <h3 class="text-xl font-bold text-white group-hover:text-purple-400 transition-colors">Website de Aluguel de Transporte</h3>
+                        <p class="text-slate-400 text-sm leading-relaxed flex-grow">
+                            RotaFirme é um website fictício desenvolvido para um trabalho da Universidade.
+                        </p>
+                        <div class="flex flex-wrap gap-2 pt-2">
+                            <span class="text-xs bg-purple-950/50 text-purple-300 border border-purple-800/60 px-3 py-1 rounded-full font-mono">JavaScript</span>
+                            <span class="text-xs bg-cyan-950/50 text-cyan-300 border border-cyan-800/60 px-3 py-1 rounded-full font-mono">Tailwind</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CONTATO -->
+    <section id="contato" class="py-24 px-6 max-w-4xl mx-auto space-y-12">
+        <div class="text-center space-y-4">
+            <h2 class="text-3xl font-bold text-white">Entrar em Contato</h2>
+            <p class="text-slate-400 max-w-md mx-auto">
+                Estou aberto a novas oportunidades profissionais e colaborações em projetos desafiadores.
+            </p>
+        </div>
+
+        <form action="https://api.web3forms.com/submit" method="POST" class="space-y-6 bg-slate-900/60 backdrop-blur-sm p-8 rounded-xl border border-slate-800 focus-within:border-purple-500/30 transition-colors">
+            
+            <input type="hidden" name="access_key" value="e490feb2-9ea3-4ada-9a30-d7095887646c">
+            <input type="hidden" name="from_name" value="Portfólio de Fernando Bira">
+            <input type="hidden" name="subject" value="Novo contato do Portfólio!">
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <div class="space-y-2">
+                    <label class="text-xs font-mono text-slate-400 uppercase tracking-wider">Nome</label>
+                    <input type="text" name="nome" required class="w-full bg-slate-950 border border-slate-800 rounded-lg px-4 py-3 text-slate-100 focus:outline-none focus:border-purple-500 focus:ring-1 focus:ring-purple-500 transition-all">
+                </div>
+                <div class="space-y-2">
+                    <label class="text-xs font-mono text-slate-400 uppercase tracking-wider">E-mail</label>
+                    <input type="email" name="email" required class="w-full bg-slate-950 border border-slate-800 rounded-lg px-4 py-3 text-slate-100 focus:outline-none focus:border-cyan-500 focus:ring-1 focus:ring-cyan-500 transition-all">
+                </div>
+            </div>
+            <div class="space-y-2">
+                <label class="text-xs font-mono text-slate-400 uppercase tracking-wider">Mensagem</label>
+                <textarea name="mensagem" rows="5" required class="w-full bg-slate-950 border border-slate-800 rounded-lg px-4 py-3 text-slate-100 focus:outline-none focus:border-purple-500 focus:ring-1 focus:ring-purple-500 transition-all resize-none"></textarea>
+            </div>
+            
+            <button type="submit" class="w-full bg-gradient-to-r from-purple-600 to-cyan-500 hover:from-purple-500 hover:to-cyan-400 text-white font-bold py-3.5 rounded-lg transition-all shadow-md hover:shadow-lg hover:shadow-purple-500/10">
+                Enviar Mensagem
+            </button>
+        </form>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="bg-slate-950 py-8 border-t border-slate-900 text-center text-sm text-slate-500 px-6">
+        <div class="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between gap-4">
+            <p>&copy; 2026 Fernando Bira. Todos os direitos reservados.</p>
+            <div class="flex space-x-6 text-lg text-slate-400">
+                <a href="https://github.com/" class="hover:text-purple-400 transition-colors"><i class="fa-brands fa-github"></i></a>
+                <a href="https://www.linkedin.com/feed/" class="hover:text-cyan-400 transition-colors"><i class="fa-brands fa-linkedin"></i></a>
+            </div>
+        </div>
+    </footer>
+
+   <script src="JS/index.js"></script>
+
+</body>
+</html>
